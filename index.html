@@ -892,13 +892,13 @@
 
     // Spin wheel prizes and probabilities - Updated according to requirements
     const spinPrizes = [
-      { id: 1, name: "NOKOS Indonesia (Biasa)", color: "#FF5252", probability: 0.01 },
-      { id: 2, name: "NOKOS Jepang", color: "#E91E63", probability: 0 },
-      { id: 3, name: "NOKOS Rusia", color: "#2196F3", probability: 0 },
-      { id: 4, name: "NOKOS Kenya + Filipina", color: "#9C27B0", probability: 0 },
-      { id: 5, name: "NOKOS Telegram Premium", color: "#FF9800", probability: 0 },
-      { id: 6, name: "NOKOS WhatsApp Global", color: "#4CAF50", probability: 0 },
-      { id: 7, name: "Coba lagi, beli NOKOS baru untuk dapat bonus", color: "#607D8B", probability: 99.99 }
+      { id: 1, name: "nokos indo biasa", color: "#FF5252", probability: 0.01 },
+      { id: 2, name: "nokos Filipina premium", color: "#E91E63", probability: 0 },
+      { id: 3, name: "nokos Kenya premium", color: "#2196F3", probability: 0 },
+      { id: 4, name: "nokos indo + nokos Filipina", color: "#9C27B0", probability: 0 },
+      { id: 5, name: "nokos indo+nokos Filipina+nokos Kenya", color: "#FF9800", probability: 0 },
+      { id: 6, name: "nokos jepang super", color: "#4CAF50", probability: 0 },
+      { id: 7, name: "coba lagi,dan beli nokos baru untuk mencoba spin bonus", color: "#607D8B", probability: 99.999 }
     ];
 
     // Device ID management
@@ -932,7 +932,7 @@
         section.style.backgroundColor = prize.color;
         
         const span = document.createElement('span');
-        span.textContent = prize.name;
+        span.textContent = prize.id;
         section.appendChild(span);
         
         wheel.appendChild(section);
@@ -1003,10 +1003,6 @@
         }
       }
       
-      // Only allow "NOKOS Indonesia (Biasa)" or "Coba lagi" to be won
-      if (selectedPrize.id !== 1 && selectedPrize.id !== 7) {
-        selectedPrize = spinPrizes.find(p => p.id === 7); // Default to "Coba lagi"
-      }
       
       // Calculate rotation (5 full rotations + prize angle)
       const sectionAngle = 360 / spinPrizes.length;
