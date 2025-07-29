@@ -1014,7 +1014,7 @@
       
       // Show result after spin completes
       setTimeout(() => {
-        resultText.innerHTML = `Anda mendapatkan: <strong>${selectedPrize.name}</strong>`;
+        resultText.innerHTML = `Anda mendapatkan: <strong>${selectedPrize.id}. ${selectedPrize.name}</strong>`;
         resultDiv.style.display = 'block';
         
         // Save that user has used their spin
