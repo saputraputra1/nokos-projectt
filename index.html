@@ -420,206 +420,6 @@
   }
 }
 
-/* Spin Wheel Styles */
-.spin-container {
-  display: none;
-  text-align: center;
-  margin-top: 20px;
-  padding: 20px;
-  background: rgba(0, 0, 0, 0.3);
-  border-radius: 15px;
-  border: 2px solid #00e5ff;
-  box-shadow: 0 0 20px rgba(0, 229, 255, 0.3);
-}
-
-.spin-title {
-  font-size: 22px;
-  margin-bottom: 15px;
-  color: #00e5ff;
-  text-shadow: 0 0 8px #00e5ff;
-}
-
-.spin-wheel-container {
-  position: relative;
-  width: 300px;
-  height: 300px;
-  margin: 0 auto;
-}
-
-.spin-wheel {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  position: relative;
-  overflow: hidden;
-  border: 8px solid #333;
-  box-shadow: 0 0 0 8px #222, 0 0 30px rgba(0, 0, 0, 0.8);
-  transition: transform 4s cubic-bezier(0.17, 0.67, 0.12, 0.99);
-  transform: rotate(0deg);
-}
-
-.spin-section {
-  position: absolute;
-  width: 50%;
-  height: 50%;
-  transform-origin: bottom right;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-  font-size: 14px;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
-  overflow: hidden;
-}
-
-.spin-section span {
-  position: relative;
-  transform: rotate(90deg);
-  width: 100%;
-  text-align: center;
-  padding-left: 30px;
-}
-
-.spin-pointer {
-  position: absolute;
-  top: -20px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 30px;
-  height: 40px;
-  z-index: 10;
-}
-
-.spin-pointer:before {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 0;
-  border-left: 15px solid transparent;
-  border-right: 15px solid transparent;
-  border-top: 30px solid #ff4444;
-  filter: drop-shadow(0 0 5px rgba(255, 0, 0, 0.7));
-}
-
-.spin-btn {
-  margin-top: 20px;
-  padding: 12px 30px;
-  background: linear-gradient(45deg, #ff00cc, #3333ff);
-  color: white;
-  border: none;
-  border-radius: 50px;
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.3s;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-}
-
-.spin-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-}
-
-.spin-btn:disabled {
-  background: #555;
-  cursor: not-allowed;
-  transform: none;
-  box-shadow: none;
-}
-
-.spin-result {
-  margin-top: 20px;
-  padding: 15px;
-  background: rgba(0, 230, 118, 0.1);
-  border-radius: 10px;
-  border-left: 4px solid #00e676;
-  display: none;
-}
-
-.spin-result h3 {
-  color: #00e676;
-  margin-bottom: 10px;
-}
-
-.spin-result p {
-  margin-bottom: 10px;
-}
-
-/* Login Modal for Spin */
-.spin-login-modal {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.8);
-  z-index: 1000;
-  justify-content: center;
-  align-items: center;
-}
-
-.spin-login-content {
-  background: #1a1a2e;
-  padding: 25px;
-  border-radius: 15px;
-  max-width: 90%;
-  width: 350px;
-  text-align: center;
-  animation: modalFadeIn 0.3s;
-  border: 2px solid #00e5ff;
-  box-shadow: 0 0 20px rgba(0, 229, 255, 0.3);
-}
-
-.spin-login-title {
-  font-size: 22px;
-  margin-bottom: 15px;
-  color: #00e5ff;
-}
-
-.spin-login-input {
-  width: 100%;
-  padding: 12px;
-  margin: 10px 0;
-  border-radius: 8px;
-  border: 1px solid #555;
-  background: rgba(255, 255, 255, 0.1);
-  color: #fff;
-  font-size: 14px;
-}
-
-.spin-login-btn {
-  padding: 12px 25px;
-  margin-top: 15px;
-  background: linear-gradient(45deg, #00e676, #00bcd4);
-  color: #000;
-  border: none;
-  border-radius: 8px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.3s;
-}
-
-.spin-login-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(0, 230, 118, 0.3);
-}
-
-.spin-login-note {
-  font-size: 12px;
-  margin-top: 15px;
-  color: #aaa;
-}
-
-.device-id-display {
-  margin-top: 15px;
-  padding: 10px;
-  background: rgba(0, 0, 0, 0.3);
-  border-radius: 8px;
-  font-size: 14px;
-  word-break: break-all;
-}
-
 </style>
 </head>
 <body>
@@ -687,7 +487,7 @@
       <label for="kualitas">Pilih Kualitas Nomor</label>
       <div class="input-group">
         <i class="fa-solid fa-signal"></i>
-        <select id="kualitas" onchange="tampilkanKeteranganKualitas(); checkSpinEligibility();" required disabled>
+        <select id="kualitas" onchange="tampilkanKeteranganKualitas()" required disabled>
           <option value="">-- Pilih Kualitas --</option>
         </select>
         <div class="error-message" id="kualitas-error">Pilih kualitas nomor</div>
@@ -721,25 +521,6 @@
         <div class="spinner" id="spinner"></div>
       </button>
     </form>
-
-    <!-- Spin Wheel Container -->
-    <div id="spinContainer" class="spin-container">
-      <h3 class="spin-title">🎁 SPIN BONUS UNTUK ANDA! 🎁</h3>
-      <p>Anda berhak mendapatkan 1x spin bonus karena membeli nomor kualitas SUPER!</p>
-      
-      <div class="spin-wheel-container">
-        <div class="spin-pointer"></div>
-        <div id="spinWheel" class="spin-wheel"></div>
-      </div>
-      
-      <button id="spinBtn" class="spin-btn" onclick="startSpin()" disabled>SPIN SEKARANG!</button>
-      
-      <div id="spinResult" class="spin-result">
-        <h3>🎉 SELAMAT! 🎉</h3>
-        <p id="resultText">Anda mendapatkan: <strong>NOKOS Indonesia (Biasa)</strong></p>
-        <p>Hadiah akan dikirim bersamaan dengan nomor yang Anda beli.</p>
-      </div>
-    </div>
 
     <div id="ringkasan" class="info-box" style="display:none;"></div>
   </div>
@@ -809,25 +590,6 @@
     </div>
   </div>
 
-  <!-- Spin Login Modal -->
-  <div class="spin-login-modal" id="spinLoginModal">
-    <div class="spin-login-content">
-      <h3 class="spin-login-title">LOGIN UNTUK SPIN BONUS</h3>
-      <p>Masukkan Device ID Anda untuk mengakses spin bonus:</p>
-      
-      <div class="device-id-display" id="deviceIdDisplay">
-        Device ID Anda: <span id="displayDeviceId"></span>
-      </div>
-      
-      <input type="text" id="spinLoginInput" class="spin-login-input" placeholder="Masukkan Device ID Anda">
-      <button class="spin-login-btn" onclick="verifySpinLogin()">MASUK</button>
-      
-      <p class="spin-login-note">
-        * Device ID unik untuk perangkat Anda dan hanya bisa digunakan 1x spin per pembelian.
-      </p>
-    </div>
-  </div>
-
   <script>
     const hargaNokos = {
         whatsapp: {
@@ -887,140 +649,13 @@
     const kualitasDescriptions = {
       biasa: "⭐ Standar, masa aktif terbatas, cocok untuk percobaan cepat.",
       premium: "⭐⭐ Lebih stabil, masa aktif lebih lama.",
-      super: "⭐⭐⭐ Kualitas terbaik, paling stabil, masa aktif paling panjang.<br>Garansi 2 hari, kalau ke spam sebelum 2 hari ganti nomer baru 1x"
+      super: "⭐⭐⭐ Kualitas terbaik, paling stabil, masa aktif paling panjang."
     };
-
-    // Spin wheel prizes and probabilities - Updated according to requirements
-    const spinPrizes = [
-      { id: 1, name: "nokos indo biasa", color: "#FF5252", probability: 0.01 },
-      { id: 2, name: "nokos Filipina premium", color: "#E91E63", probability: 0 },
-      { id: 3, name: "nokos Kenya premium", color: "#2196F3", probability: 0 },
-      { id: 4, name: "nokos indo + nokos Filipina", color: "#9C27B0", probability: 0 },
-      { id: 5, name: "nokos indo+nokos Filipina+nokos Kenya", color: "#FF9800", probability: 0 },
-      { id: 6, name: "nokos jepang super", color: "#4CAF50", probability: 0 },
-      { id: 7, name: "coba lagi,dan beli nokos baru untuk mencoba spin bonus", color: "#607D8B", probability: 99.999 }
-    ];
-
-    // Device ID management
-    let deviceId = localStorage.getItem('deviceId');
-    if (!deviceId) {
-      deviceId = generateDeviceId();
-      localStorage.setItem('deviceId', deviceId);
-    }
 
     // Call initialize when page loads
     document.addEventListener('DOMContentLoaded', function() {
       setupInputValidation();
-      createSpinWheel();
-      checkSpinEligibility();
     });
-
-    function generateDeviceId() {
-      return 'd-' + Math.random().toString(36).substr(2, 9) + '-' + Date.now().toString(36);
-    }
-
-    function createSpinWheel() {
-      const wheel = document.getElementById('spinWheel');
-      wheel.innerHTML = '';
-      
-      const sectionAngle = 360 / spinPrizes.length;
-      
-      spinPrizes.forEach((prize, index) => {
-        const section = document.createElement('div');
-        section.className = 'spin-section';
-        section.style.transform = `rotate(${index * sectionAngle}deg)`;
-        section.style.backgroundColor = prize.color;
-        
-        const span = document.createElement('span');
-        span.textContent = prize.id;
-        section.appendChild(span);
-        
-        wheel.appendChild(section);
-      });
-    }
-
-    function checkSpinEligibility() {
-      const provider = document.getElementById('provider').value;
-      const negara = document.getElementById('negara').value;
-      const kualitas = document.getElementById('kualitas').value;
-      const spinContainer = document.getElementById('spinContainer');
-      const spinBtn = document.getElementById('spinBtn');
-      
-      // Check if eligible for spin (super quality and not Indonesia, Philippines, or Kenya)
-      const isEligible = kualitas === 'super' && 
-                         negara && 
-                         !['id', 'fil', 'ken'].includes(negara) && 
-                         provider;
-      
-      if (isEligible) {
-        spinContainer.style.display = 'block';
-        spinBtn.disabled = localStorage.getItem('spinUsed') === 'true';
-        
-        // Scroll to spin container
-        setTimeout(() => {
-          spinContainer.scrollIntoView({ behavior: 'smooth' });
-        }, 300);
-      } else {
-        spinContainer.style.display = 'none';
-      }
-    }
-
-    function showSpinLogin() {
-      document.getElementById('displayDeviceId').textContent = deviceId;
-      document.getElementById('spinLoginModal').style.display = 'flex';
-    }
-
-    function verifySpinLogin() {
-      const input = document.getElementById('spinLoginInput').value.trim();
-      
-      if (input === deviceId) {
-        document.getElementById('spinLoginModal').style.display = 'none';
-        document.getElementById('spinBtn').disabled = false;
-      } else {
-        alert('Device ID tidak valid. Silakan masukkan ID yang benar.');
-      }
-    }
-
-    function startSpin() {
-      const btn = document.getElementById('spinBtn');
-      const wheel = document.getElementById('spinWheel');
-      const resultDiv = document.getElementById('spinResult');
-      const resultText = document.getElementById('resultText');
-      
-      btn.disabled = true;
-      resultDiv.style.display = 'none';
-      
-      // Determine the prize based on probabilities
-      const random = Math.random() * 100;
-      let cumulativeProbability = 0;
-      let selectedPrize = null;
-      
-      for (const prize of spinPrizes) {
-        cumulativeProbability += prize.probability;
-        if (random <= cumulativeProbability) {
-          selectedPrize = prize;
-          break;
-        }
-      }
-      
-      
-      // Calculate rotation (5 full rotations + prize angle)
-      const sectionAngle = 360 / spinPrizes.length;
-      const prizeIndex = spinPrizes.findIndex(p => p.id === selectedPrize.id);
-      const targetAngle = 5 * 360 + (360 - (prizeIndex * sectionAngle + sectionAngle/2));
-      
-      // Apply rotation
-      wheel.style.transform = `rotate(${targetAngle}deg)`;
-      
-      // Show result after spin completes
-      setTimeout(() => {
-        resultText.innerHTML = `Anda mendapatkan: <strong>${selectedPrize.id}. ${selectedPrize.name}</strong>`;
-        resultDiv.style.display = 'block';
-        
-        // Save that user has used their spin
-        localStorage.setItem('spinUsed', 'true');
-      }, 4000);
-    }
 
     function showLoading(show) {
       const spinner = document.getElementById('spinner');
@@ -1234,17 +869,27 @@
       }
       
       tampilkanKeteranganKualitas();
-      checkSpinEligibility();
       validateKualitas();
     }
 
     function tampilkanKeteranganKualitas() {
       const kualitas = document.getElementById("kualitas").value;
+      const negara = document.getElementById("negara").value;
       const ketBox = document.getElementById("keterangan-kualitas");
       const ketText = document.getElementById("keterangan-text");
       
       if (kualitas && kualitasDescriptions[kualitas]) {
-        ketText.innerHTML = kualitasDescriptions[kualitas];
+        let description = kualitasDescriptions[kualitas];
+        const excludedCountries = ['id', 'fil', 'ken'];
+
+        if (kualitas === 'super') {
+            if (negara && !excludedCountries.includes(negara)) {
+                description += "<br>Garansi 2 hari, kalau ke spam sebelum 2 hari ganti nomer baru 1x";
+                description += '<br><br><strong>Bonus:</strong> Setiap pembelian nokos kualitas super bisa claim bonus free nokos, untuk claim chat admin,dan isi form nya';
+            }
+        }
+
+        ketText.innerHTML = description;
         ketBox.classList.add("show");
       } else {
         ketBox.classList.remove("show");
@@ -1281,14 +926,6 @@
       document.getElementById("ringkasan").style.display = "block";
       
       document.getElementById("ringkasan").scrollIntoView({ behavior: 'smooth' });
-      
-      // Show spin login if eligible
-      const isEligibleForSpin = kualitas === 'super' && !['id', 'fil', 'ken'].includes(negara);
-      if (isEligibleForSpin && !localStorage.getItem('spinUsed')) {
-        setTimeout(() => {
-          showSpinLogin();
-        }, 1000);
-      }
     }
 
     document.addEventListener('scroll', function() {
